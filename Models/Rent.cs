@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Foolproof;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -27,7 +28,7 @@ namespace AutoFocus_CodeFirst.Models
         [DisplayName("Booking Start Date")]
         public DateTime DateOfBooking { get; set; }
 
-        
+        [GreaterThan("DateOfBooking", ErrorMessage = "Start of Booking cannot be greater than End of Booking Date")]
         [DisplayName("Booking End Date")]
         public DateTime EndOfBooking { get; set; }
 

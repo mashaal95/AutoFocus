@@ -27,12 +27,10 @@ namespace AutoFocus_CodeFirst.Controllers
             }
 
             return View(db.Customers.Where(s => s.CustomerId == UserId).ToList());
-        
+        }
 
-    }
-
-    // GET: Customers/Details/5
-    public ActionResult Details(string id)
+        // GET: Customers/Details/5
+        public ActionResult Details(string id)
         {
             if (id == null)
             {
@@ -47,7 +45,6 @@ namespace AutoFocus_CodeFirst.Controllers
         }
 
         // GET: Customers/Create
-        //[Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -58,10 +55,10 @@ namespace AutoFocus_CodeFirst.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        
         public ActionResult Create([Bind(Include = "CustomerId,Name,Surname,DateOfBirth,RegistrationDate,PhoneNum")] Customer customer)
         {
             customer.CustomerId = User.Identity.GetUserId();
+            customer.RegistrationDate = DateTime.Today;
 
             ModelState.Clear();
             TryValidateModel(customer);

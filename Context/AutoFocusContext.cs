@@ -15,5 +15,7 @@ namespace AutoFocus_CodeFirst.Context
         public DbSet<Branch> Branches { get; set; }
 
         public DbSet<Customer> Customers { get; set; }
+
+        public System.Data.Entity.DbSet<AutoFocus_CodeFirst.Models.Suggestion> Suggestions { get; set; }
     }
 }

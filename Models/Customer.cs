@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Foolproof;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -37,6 +38,8 @@ namespace AutoFocus_CodeFirst.Models
         public int PhoneNum { get; set; }
 
         public ICollection<Rent> Rents { get; set; }
+
+        public ICollection<Suggestion> Suggestions { get; set; }
 
 
 

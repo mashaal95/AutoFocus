@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using AutoFocus_CodeFirst.Context;
 using AutoFocus_CodeFirst.Models;
+using Microsoft.AspNet.Identity;
 
 namespace AutoFocus_CodeFirst.Controllers
 {
@@ -19,7 +20,16 @@ namespace AutoFocus_CodeFirst.Controllers
         public ActionResult Index()
         {
             var rents = db.Rents.Include(r => r.Cars).Include(r => r.Customer);
-            return View(rents.ToList());
+            var UserId = User.Identity.GetUserId();
+            
+
+
+            if (User.Identity.GetUserName() == "administrator@live.com")
+            {
+                return View(rents.ToList());
+            }
+
+            return View(rents.Where(s => s.CustomerId == UserId).ToList());
         }
 
         // GET: Rents/Details/5
@@ -54,6 +64,9 @@ namespace AutoFocus_CodeFirst.Controllers
         {
             if (ModelState.IsValid)
             {
+                int result = DateTime.Compare(rent.DateOfBooking, rent.EndOfBooking);
+
+               
                 db.Rents.Add(rent);
                 db.SaveChanges();
                 return RedirectToAction("Index");
