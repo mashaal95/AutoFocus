@@ -101,4 +101,10 @@ C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeF
 C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.csproj.CopyComplete
 C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.dll
 C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.pdb
+C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.Migrations.InitialCreate.resources
+C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.csproj.GenerateResource.cache
+C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.Migrations.AddedValidationstoModel.resources
+C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.Migrations.AddedsomesmallerValidations.resources
 C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.csprojAssemblyReference.cache
+C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.Migrations.CorrectedRentsClass.resources
+C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.Migrations.AddedsomesmallervalidationsfortheCarsclass.resources

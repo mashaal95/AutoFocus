@@ -18,7 +18,7 @@ namespace AutoFocus_CodeFirst.Controllers
         // GET: Rents
         public ActionResult Index()
         {
-            var rents = db.Rents.Include(r => r.Customer);
+            var rents = db.Rents.Include(r => r.Cars).Include(r => r.Customer);
             return View(rents.ToList());
         }
 
@@ -40,6 +40,7 @@ namespace AutoFocus_CodeFirst.Controllers
         // GET: Rents/Create
         public ActionResult Create()
         {
+            ViewBag.CarId = new SelectList(db.Cars, "CarId", "CarName");
             ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "Name");
             return View();
         }
@@ -58,6 +59,7 @@ namespace AutoFocus_CodeFirst.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.CarId = new SelectList(db.Cars, "CarId", "CarName", rent.CarId);
             ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "Name", rent.CustomerId);
             return View(rent);
         }
@@ -74,6 +76,7 @@ namespace AutoFocus_CodeFirst.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.CarId = new SelectList(db.Cars, "CarId", "CarName", rent.CarId);
             ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "Name", rent.CustomerId);
             return View(rent);
         }
@@ -91,6 +94,7 @@ namespace AutoFocus_CodeFirst.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.CarId = new SelectList(db.Cars, "CarId", "CarName", rent.CarId);
             ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "Name", rent.CustomerId);
             return View(rent);
         }
