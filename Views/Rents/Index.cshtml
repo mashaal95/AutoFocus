@@ -1,0 +1,70 @@
+﻿@model IEnumerable<AutoFocus_CodeFirst.Models.Rent>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RatingDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBooking)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndOfBooking)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalRate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RatingDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfBooking)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndOfBooking)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalRate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RentId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RentId })
+        </td>
+    </tr>
+}
+
+</table>
