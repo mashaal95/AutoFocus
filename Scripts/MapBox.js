@@ -53,6 +53,13 @@ map.addControl(new mapboxgl.GeolocateControl({
     trackUserLocation: true
 }));
 
+//Add driving directions
+map.addControl(new MapboxDirections({
+    accessToken: mapboxgl.accessToken,
+    profile: 'mapbox/driving'
+}), 'top-left');
+
+
 map.on('load', function () {
     // Add a layer showing the places.
     map.addLayer({
@@ -66,7 +73,7 @@ map.on('load', function () {
             }
         },
         "layout": {
-            "icon-image": "{icon}",
+            "icon-image": "{icon}-15",
             "icon-allow-overlap": true
         }
     });
