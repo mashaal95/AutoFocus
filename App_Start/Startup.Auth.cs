@@ -58,11 +58,11 @@ namespace AutoFocus_CodeFirst
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "425397472283-aepm4rgvtvripkn27e4n421khfntup7g.apps.googleusercontent.com",
+                ClientSecret = "-ruIDnzUPfE0AYbUUl7ALzsS"
+            });
         }
     }
 }

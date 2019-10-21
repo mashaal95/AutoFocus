@@ -37,7 +37,6 @@ namespace AutoFocus_CodeFirst.Controllers
         }
 
         // GET: Branches/Create
-        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -48,7 +47,7 @@ namespace AutoFocus_CodeFirst.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BranchId,BrName,BrDesc,BrAddress,BrSuburb,City,ZipCode")] Branch branch)
+        public ActionResult Create([Bind(Include = "BranchId,BrName,BrDesc,BrAddress,BrSuburb,City,BrLatitude,BrLongitude,ZipCode")] Branch branch)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +79,7 @@ namespace AutoFocus_CodeFirst.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BranchId,BrName,BrDesc,BrAddress,BrSuburb,City,ZipCode")] Branch branch)
+        public ActionResult Edit([Bind(Include = "BranchId,BrName,BrDesc,BrAddress,BrSuburb,City,BrLatitude,BrLongitude,ZipCode")] Branch branch)
         {
             if (ModelState.IsValid)
             {

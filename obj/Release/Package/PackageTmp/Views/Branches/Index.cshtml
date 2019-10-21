@@ -1,0 +1,91 @@
+﻿@model IEnumerable<AutoFocus_CodeFirst.Models.Branch>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @if (User.IsInRole("Admin"))
+    {
+        @Html.ActionLink("Create New", "Create")
+    }
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BrName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BrDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BrAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BrSuburb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZipCode)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BrName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BrDesc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BrAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BrSuburb)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ZipCode)
+                </td>
+                <td>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.BranchId })
+                    } |
+                    @if (User.IsInRole("Admin"))
+                    {
+                        @Html.ActionLink("Delete", "Delete", new { id = item.BranchId })
+                    } |
+                    @Html.ActionLink("Details", "Details", new { id = item.BranchId })
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+
+    @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
+    @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
+    <script>
+        $(document).ready(function () {
+            $('.table').DataTable();
+        });
+    </script>
+}
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css"
+      rel="stylesheet" />

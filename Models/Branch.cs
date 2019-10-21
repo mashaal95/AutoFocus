@@ -36,6 +36,16 @@ namespace AutoFocus_CodeFirst.Models
         public String City { get; set; }
 
         [Required]
+        [Range(-91, 91, ErrorMessage = "The latitude value entered is incorrect")]
+        public double BrLatitude { get; set; }
+
+        [Required]
+        [Range(-181, 181, ErrorMessage = "The latitude value entered is incorrect")]
+        public double BrLongitude { get; set; }
+
+
+
+        [Required]
         public Int32 ZipCode { get; set; }
 
         public ICollection<Car> Cars { get; set; }

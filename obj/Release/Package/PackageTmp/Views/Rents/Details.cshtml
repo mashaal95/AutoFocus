@@ -1,0 +1,75 @@
+﻿@model AutoFocus_CodeFirst.Models.Rent
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Rent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cars.CarName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cars.CarName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RatingDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RatingDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfBooking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfBooking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndOfBooking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndOfBooking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalRate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

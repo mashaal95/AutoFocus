@@ -1,0 +1,81 @@
+﻿@model AutoFocus_CodeFirst.Models.Rent
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Rent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cars.CarName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cars.CarName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RatingDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RatingDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfBooking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfBooking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndOfBooking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndOfBooking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalRate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

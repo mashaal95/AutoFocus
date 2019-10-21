@@ -6,6 +6,9 @@
 }
 
 <h2>Index</h2>
+<div id="map" style="height:300px"></div>
+<br />
+<p>
 
 <p>
     @if (User.IsInRole("Admin"))
@@ -14,73 +17,83 @@
     }
 </p>
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.BrName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BrDesc)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BrAddress)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BrSuburb)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.City)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ZipCode)
-            </th>
-            <th></th>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BrName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrSuburb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrLatitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrLongitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZipCode)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="coordinates">
+            <td>
+                @Html.DisplayFor(modelItem => item.BrName)
+            </td>
+            <td class="description">
+                @Html.DisplayFor(modelItem => item.BrDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrSuburb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td class="latitude">
+                @Html.DisplayFor(modelItem => item.BrLatitude)
+            </td>
+            <td class="longitude">
+                @Html.DisplayFor(modelItem => item.BrLongitude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZipCode)
+            </td>
+            <td>
+                @if (User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.BranchId })
+                } |
+                @if (User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("Delete", "Delete", new { id = item.BranchId })
+                } |
+                @Html.ActionLink("Details", "Details", new { id = item.BranchId })
+
+            </td>
         </tr>
-    </thead>
-    <tbody>
+    }
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BrName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BrDesc)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BrAddress)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BrSuburb)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.City)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ZipCode)
-                </td>
-                <td>
-                    @if (User.IsInRole("Admin"))
-                    {
-                        @Html.ActionLink("Edit", "Edit", new { id = item.BranchId })
-                    } |
-                    @if (User.IsInRole("Admin"))
-                    {
-                        @Html.ActionLink("Delete", "Delete", new { id = item.BranchId })
-                    } |
-                    @Html.ActionLink("Details", "Details", new { id = item.BranchId })
-
-                </td>
-            </tr>
-        }
-    </tbody>
 </table>
 
 @section Scripts {
 
     @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
     @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
+    @Scripts.Render("~/bundles/mapbox")
     <script>
         $(document).ready(function () {
             $('.table').DataTable();

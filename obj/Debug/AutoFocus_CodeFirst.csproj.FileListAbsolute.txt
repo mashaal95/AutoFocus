@@ -105,7 +105,6 @@ C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeF
 C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.csproj.GenerateResource.cache
 C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.Migrations.AddedValidationstoModel.resources
 C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.Migrations.AddedsomesmallerValidations.resources
-C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.csprojAssemblyReference.cache
 C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.Migrations.CorrectedRentsClass.resources
 C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.Migrations.AddedsomesmallervalidationsfortheCarsclass.resources
 C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\bin\FoolproofValidation.dll
@@ -114,3 +113,5 @@ C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeF
 C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\bin\SendGrid.dll
 C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\bin\SendGrid.pdb
 C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\bin\SendGrid.xml
+C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.Migrations.m.resources
+C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.csprojAssemblyReference.cache

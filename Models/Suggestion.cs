@@ -28,6 +28,7 @@ namespace AutoFocus_CodeFirst.Models
         [AllowHtml]
         public String EmailMessage { get; set; }
 
+
         public Customer Customers { get; set; }
 
 
