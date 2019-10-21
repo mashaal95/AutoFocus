@@ -25,7 +25,7 @@ namespace AutoFocus_CodeFirst
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/mapbox").Include(
-                        "~/Scripts/mapbox.js"));
+                        "~/Scripts/mbox.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
