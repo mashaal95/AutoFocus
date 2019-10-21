@@ -21,6 +21,7 @@ namespace AutoFocus_CodeFirst.Models
         [DisplayName("Branch Description")]
         public String BrDesc { get; set; }
 
+
         [Required(ErrorMessage = "This field cannot be blank, please enter valid Branch Description")]
         [RegularExpression(@"^[\w\s-]+$", ErrorMessage = "No special characters allowed")]
         [DisplayName("Branch Address")]

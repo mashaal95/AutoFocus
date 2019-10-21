@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using AutoFocus_CodeFirst.Context;
 using AutoFocus_CodeFirst.Email;
 using AutoFocus_CodeFirst.Models;
+using Microsoft.Security.Application;
 
 namespace AutoFocus_CodeFirst.Controllers
 {
@@ -50,10 +51,13 @@ namespace AutoFocus_CodeFirst.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Create([Bind(Include = "Id,CustomerId,FromName,FromEmail,EmailMessage")] Suggestion suggestion)
         {
             if (ModelState.IsValid)
             {
+                suggestion.EmailMessage = Sanitizer.GetSafeHtmlFragment(suggestion.EmailMessage);
+                suggestion.FromName = Sanitizer.GetSafeHtmlFragment(suggestion.FromName);
                 EmailFunctionality es = new EmailFunctionality();
                 es.Send(suggestion.FromEmail, suggestion.FromName, suggestion.EmailMessage);
                 db.Suggestions.Add(suggestion);

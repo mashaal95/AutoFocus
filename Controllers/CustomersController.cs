@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using AutoFocus_CodeFirst.Context;
 using AutoFocus_CodeFirst.Models;
 using Microsoft.AspNet.Identity;
+using Microsoft.Security.Application;
 
 namespace AutoFocus_CodeFirst.Controllers
 {
@@ -55,6 +56,7 @@ namespace AutoFocus_CodeFirst.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Create([Bind(Include = "CustomerId,Name,Surname,DateOfBirth,RegistrationDate,PhoneNum")] Customer customer)
         {
             customer.CustomerId = User.Identity.GetUserId();
@@ -65,6 +67,11 @@ namespace AutoFocus_CodeFirst.Controllers
 
             if (ModelState.IsValid)
             {
+                customer.Name= Sanitizer.GetSafeHtmlFragment(customer.Name);
+                customer.Surname= Sanitizer.GetSafeHtmlFragment(customer.Name);
+                string conversion = customer.PhoneNum.ToString();
+                conversion = Sanitizer.GetSafeHtmlFragment(conversion);
+                
                 db.Customers.Add(customer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -93,10 +100,15 @@ namespace AutoFocus_CodeFirst.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Edit([Bind(Include = "CustomerId,Name,Surname,DateOfBirth,RegistrationDate,PhoneNum")] Customer customer)
         {
             if (ModelState.IsValid)
             {
+                customer.Name = Sanitizer.GetSafeHtmlFragment(customer.Name);
+                customer.Surname = Sanitizer.GetSafeHtmlFragment(customer.Name);
+                string conversion = customer.PhoneNum.ToString();
+                conversion = Sanitizer.GetSafeHtmlFragment(conversion);
                 db.Entry(customer).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
