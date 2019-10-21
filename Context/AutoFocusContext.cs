@@ -17,5 +17,14 @@ namespace AutoFocus_CodeFirst.Context
         public DbSet<Customer> Customers { get; set; }
 
         public System.Data.Entity.DbSet<AutoFocus_CodeFirst.Models.Suggestion> Suggestions { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Rent>()
+                .HasRequired(r => r.Customer)
+                .WithMany(f => f.Rents)
+                .HasForeignKey(f => f.CustomerIdFK);
+
+        }
     }
 }

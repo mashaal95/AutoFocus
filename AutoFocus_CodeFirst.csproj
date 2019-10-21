@@ -258,6 +258,38 @@
     <Compile Include="Migrations\201910210442106_m.Designer.cs">
       <DependentUpon>201910210442106_m.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910210820021_Added on delete cascade from customer.cs" />
+    <Compile Include="Migrations\201910210820021_Added on delete cascade from customer.Designer.cs">
+      <DependentUpon>201910210820021_Added on delete cascade from customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910210828258_refreshing the model.cs" />
+    <Compile Include="Migrations\201910210828258_refreshing the model.Designer.cs">
+      <DependentUpon>201910210828258_refreshing the model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910210829076_updating the model again.cs" />
+    <Compile Include="Migrations\201910210829076_updating the model again.Designer.cs">
+      <DependentUpon>201910210829076_updating the model again.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910210841248_renovation.cs" />
+    <Compile Include="Migrations\201910210841248_renovation.Designer.cs">
+      <DependentUpon>201910210841248_renovation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910211038578_rents issue.cs" />
+    <Compile Include="Migrations\201910211038578_rents issue.Designer.cs">
+      <DependentUpon>201910211038578_rents issue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910211055586_r.cs" />
+    <Compile Include="Migrations\201910211055586_r.Designer.cs">
+      <DependentUpon>201910211055586_r.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910211113244_r3.cs" />
+    <Compile Include="Migrations\201910211113244_r3.Designer.cs">
+      <DependentUpon>201910211113244_r3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910211127474_r4.cs" />
+    <Compile Include="Migrations\201910211127474_r4.Designer.cs">
+      <DependentUpon>201910211127474_r4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Branch.cs" />
@@ -817,11 +849,6 @@
     <Content Include="Views\Cars\Details.cshtml" />
     <Content Include="Views\Cars\Edit.cshtml" />
     <Content Include="Views\Cars\Index.cshtml" />
-    <Content Include="Views\Rents\Create.cshtml" />
-    <Content Include="Views\Rents\Delete.cshtml" />
-    <Content Include="Views\Rents\Details.cshtml" />
-    <Content Include="Views\Rents\Edit.cshtml" />
-    <Content Include="Views\Rents\Index.cshtml" />
     <Content Include="Views\Customers\Create.cshtml" />
     <Content Include="Views\Customers\Delete.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
@@ -840,6 +867,11 @@
     <Content Include="Views\Branches\Details.cshtml" />
     <Content Include="Views\Branches\Edit.cshtml" />
     <Content Include="Views\Branches\Index.cshtml" />
+    <Content Include="Views\Rents\Create.cshtml" />
+    <Content Include="Views\Rents\Delete.cshtml" />
+    <Content Include="Views\Rents\Details.cshtml" />
+    <Content Include="Views\Rents\Edit.cshtml" />
+    <Content Include="Views\Rents\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201910101052505_InitialCreate.resx">
@@ -865,6 +897,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910210442106_m.resx">
       <DependentUpon>201910210442106_m.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910210820021_Added on delete cascade from customer.resx">
+      <DependentUpon>201910210820021_Added on delete cascade from customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910210828258_refreshing the model.resx">
+      <DependentUpon>201910210828258_refreshing the model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910210829076_updating the model again.resx">
+      <DependentUpon>201910210829076_updating the model again.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910210841248_renovation.resx">
+      <DependentUpon>201910210841248_renovation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910211038578_rents issue.resx">
+      <DependentUpon>201910211038578_rents issue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910211055586_r.resx">
+      <DependentUpon>201910211055586_r.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910211113244_r3.resx">
+      <DependentUpon>201910211113244_r3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910211127474_r4.resx">
+      <DependentUpon>201910211127474_r4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

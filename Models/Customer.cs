@@ -36,7 +36,7 @@ namespace AutoFocus_CodeFirst.Models
         [DataType(DataType.PhoneNumber)]
         [DisplayName("Phone Number")]   
         public int PhoneNum { get; set; }
-
+    
         public ICollection<Rent> Rents { get; set; }
 
         public ICollection<Suggestion> Suggestions { get; set; }

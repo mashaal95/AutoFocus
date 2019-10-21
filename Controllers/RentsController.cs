@@ -8,7 +8,6 @@ using System.Web;
 using System.Web.Mvc;
 using AutoFocus_CodeFirst.Context;
 using AutoFocus_CodeFirst.Models;
-using Microsoft.AspNet.Identity;
 
 namespace AutoFocus_CodeFirst.Controllers
 {
@@ -20,16 +19,7 @@ namespace AutoFocus_CodeFirst.Controllers
         public ActionResult Index()
         {
             var rents = db.Rents.Include(r => r.Cars).Include(r => r.Customer);
-            var UserId = User.Identity.GetUserId();
-            
-
-
-            if (User.Identity.GetUserName() == "administrator@live.com")
-            {
-                return View(rents.ToList());
-            }
-
-            return View(rents.Where(s => s.CustomerId == UserId).ToList());
+            return View(rents.ToList());
         }
 
         // GET: Rents/Details/5
@@ -51,7 +41,7 @@ namespace AutoFocus_CodeFirst.Controllers
         public ActionResult Create()
         {
             ViewBag.CarId = new SelectList(db.Cars, "CarId", "CarName");
-            ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "Name");
+            ViewBag.CustomerIdFK = new SelectList(db.Customers, "CustomerId", "Name");
             return View();
         }
 
@@ -60,20 +50,17 @@ namespace AutoFocus_CodeFirst.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "RentId,CustomerId,CarId,Rating,RatingDesc,DateOfBooking,EndOfBooking,TotalRate")] Rent rent)
+        public ActionResult Create([Bind(Include = "RentId,CustomerIdFK,CarId,Rating,RatingDesc,DateOfBooking,EndOfBooking,TotalRate")] Rent rent)
         {
             if (ModelState.IsValid)
             {
-                int result = DateTime.Compare(rent.DateOfBooking, rent.EndOfBooking);
-
-               
                 db.Rents.Add(rent);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             ViewBag.CarId = new SelectList(db.Cars, "CarId", "CarName", rent.CarId);
-            ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "Name", rent.CustomerId);
+            ViewBag.CustomerIdFK = new SelectList(db.Customers, "CustomerId", "Name", rent.CustomerIdFK);
             return View(rent);
         }
 
@@ -90,7 +77,7 @@ namespace AutoFocus_CodeFirst.Controllers
                 return HttpNotFound();
             }
             ViewBag.CarId = new SelectList(db.Cars, "CarId", "CarName", rent.CarId);
-            ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "Name", rent.CustomerId);
+            ViewBag.CustomerIdFK = new SelectList(db.Customers, "CustomerId", "Name", rent.CustomerIdFK);
             return View(rent);
         }
 
@@ -99,7 +86,7 @@ namespace AutoFocus_CodeFirst.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "RentId,CustomerId,CarId,Rating,RatingDesc,DateOfBooking,EndOfBooking,TotalRate")] Rent rent)
+        public ActionResult Edit([Bind(Include = "RentId,CustomerIdFK,CarId,Rating,RatingDesc,DateOfBooking,EndOfBooking,TotalRate")] Rent rent)
         {
             if (ModelState.IsValid)
             {
@@ -108,7 +95,7 @@ namespace AutoFocus_CodeFirst.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.CarId = new SelectList(db.Cars, "CarId", "CarName", rent.CarId);
-            ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "Name", rent.CustomerId);
+            ViewBag.CustomerIdFK = new SelectList(db.Customers, "CustomerId", "Name", rent.CustomerIdFK);
             return View(rent);
         }
 

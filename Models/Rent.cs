@@ -13,7 +13,7 @@ namespace AutoFocus_CodeFirst.Models
 
         public Int32 RentId { get; set; }
 
-        public String CustomerId { get; set; }
+        public string CustomerIdFK { get; set; }
 
         public Int32 CarId { get; set; }    
 

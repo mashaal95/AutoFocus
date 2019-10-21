@@ -94,6 +94,8 @@ namespace AutoFocus_CodeFirst.Controllers
         {
             if (ModelState.IsValid)
             {
+                suggestion.EmailMessage = Sanitizer.GetSafeHtmlFragment(suggestion.EmailMessage);
+                suggestion.FromName = Sanitizer.GetSafeHtmlFragment(suggestion.FromName);
                 db.Entry(suggestion).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
