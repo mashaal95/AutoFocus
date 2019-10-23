@@ -52,6 +52,7 @@ namespace AutoFocus_CodeFirst.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "CarId,BranchId,CarName,CarDesc,PricePerDay,NoOfSeats,Transmission")] Car car)
         {
+            
             if (ModelState.IsValid)
             {
                 db.Cars.Add(car);

@@ -52,6 +52,11 @@ namespace AutoFocus_CodeFirst.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "RentId,CustomerIdFK,CarId,Rating,RatingDesc,DateOfBooking,EndOfBooking,TotalRate")] Rent rent)
         {
+            DateTime StartDate = rent.DateOfBooking;
+            DateTime EndDate = rent.EndOfBooking;
+            int Diff = ((TimeSpan)(EndDate - StartDate)).Days;
+            //Double Total = Diff*
+
             if (ModelState.IsValid)
             {
                 db.Rents.Add(rent);

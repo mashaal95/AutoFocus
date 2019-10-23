@@ -51,13 +51,18 @@ map.addControl(new mapboxgl.GeolocateControl({
         enableHighAccuracy: true
     },
     trackUserLocation: true
-}));
+}),'bottom-right');
 
 //Add driving directions
 map.addControl(new MapboxDirections({
     accessToken: mapboxgl.accessToken,
     profile: 'mapbox/driving'
 }), 'top-left');
+
+map.addControl(new mapboxgl.NavigationControl(
+    {
+
+    }),'top-right');
 
 
 map.on('load', function () {
@@ -80,7 +85,7 @@ map.on('load', function () {
     map.addControl(new MapboxGeocoder({
         accessToken: mapboxgl.accessToken
     }));;
-    map.addControl(new mapboxgl.NavigationControl());
+    
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties.
     map.on('click', 'places', function (e) {
