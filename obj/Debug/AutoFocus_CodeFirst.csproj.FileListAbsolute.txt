@@ -255,3 +255,4 @@ C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\Responsive Images\AutoFocus
 C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\Responsive Images\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.Migrations.r4.resources
 C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.Migrations.r3.resources
 C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.Migrations.r4.resources
+C:\Users\Mashaal\Documents\FIT-5032-Internet_App_Dev\VS_Projects\AutoFocus_CodeFirst\obj\Debug\AutoFocus_CodeFirst.csprojAssemblyReference.cache

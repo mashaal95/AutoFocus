@@ -1,12 +1,15 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    color: #FFFFFF;
+    background-color: #424242;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -22,3 +25,28 @@ select,
 textarea {
     max-width: 280px;
 }
+
+a {
+    color: yellow;
+}
+
+
+a:link
+{
+    color: yellow;
+}
+.btn {
+    background-color: #070707;
+}
+
+.btn:hover
+{
+    color:black;
+    background-color:yellow;
+}
+
+a:hover {
+    color: black;
+    background-color: yellow;
+}
+

@@ -486,6 +486,7 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\fontawesome-all.min.css" />
     <Content Include="Content\foundation-float.css" />
     <Content Include="Content\foundation-float.min.css" />
     <Content Include="Content\foundation-prototype.css" />
@@ -500,10 +501,14 @@
     <Content Include="Content\images\marker-icon.png" />
     <Content Include="Content\images\marker-shadow.png" />
     <Content Include="Content\leaflet.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\normalize.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\exotics-locations-header.png" />
+    <Content Include="Images\jumbotron-bugatti.png" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap-datepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -637,6 +642,8 @@
     <Content Include="Content\foundation-float.min.css.map" />
     <Content Include="Content\foundation-float.css.map" />
     <None Include="Properties\PublishProfiles\AutoRentaCar - Web Deploy.pubxml" />
+    <Content Include="Scripts\breakpoints.min.js" />
+    <Content Include="Scripts\browser.min.js" />
     <Content Include="Scripts\foundation.cjs.js" />
     <Content Include="Scripts\foundation.es6.js" />
     <Content Include="Scripts\foundation.esm.js" />
@@ -729,6 +736,7 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.scrolly.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -817,6 +825,7 @@
     <Content Include="Scripts\locales\bootstrap-datepicker.vi.min.js" />
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-CN.min.js" />
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.min.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\mbox.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\plugins\foundation.abide.js" />
@@ -1011,6 +1020,7 @@
     <Content Include="Scripts\tinymce\themes\silver\theme.min.js" />
     <Content Include="Scripts\tinymce\tinymce.js" />
     <Content Include="Scripts\tinymce\tinymce.min.js" />
+    <Content Include="Scripts\util.js" />
     <Content Include="Scripts\what-input.js" />
     <Content Include="Scripts\what-input.min.js" />
     <Content Include="Web.config" />
@@ -1201,6 +1211,7 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
