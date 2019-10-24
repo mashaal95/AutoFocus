@@ -641,6 +641,7 @@
     <Content Include="Content\foundation-prototype.css.map" />
     <Content Include="Content\foundation-float.min.css.map" />
     <Content Include="Content\foundation-float.css.map" />
+    <Content Include="Attachments\AutoFocus_Attachment.pdf" />
     <None Include="Properties\PublishProfiles\AutoRentaCar - Web Deploy.pubxml" />
     <Content Include="Scripts\breakpoints.min.js" />
     <Content Include="Scripts\browser.min.js" />

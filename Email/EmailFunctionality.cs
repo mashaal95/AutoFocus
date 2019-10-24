@@ -2,6 +2,7 @@
 using SendGrid.Helpers.Mail;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -38,8 +39,6 @@ namespace AutoFocus_CodeFirst.Email
             String subject = "Hello Everybody!";
             String contents = "Hello and Welcome to Auto-Focus! We are currently having tons of offers on our website! Please do" +
                 "check us out at Auto-Focus.io";
-
-
          
                 var client = new SendGridClient(API_KEY);
                 var from = new EmailAddress("noreply@AutoFocus.com", "Auto-Focus Rent A Car");
@@ -47,6 +46,9 @@ namespace AutoFocus_CodeFirst.Email
                 var plainTextContent = contents;
                 var htmlContent = "<p>" + contents + "</p>";
                 var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
+                var bytes = File.ReadAllBytes("C:/Users/Mashaal/Documents/FIT-5032-Internet_App_Dev/AutoFocus_Attachment.pdf");
+                var file = Convert.ToBase64String(bytes);
+                msg.AddAttachment("AutoFocusPromo.pdf", file);
                 var response = client.SendEmailAsync(msg);
            
    
@@ -54,3 +56,4 @@ namespace AutoFocus_CodeFirst.Email
 
     }
 }
+
