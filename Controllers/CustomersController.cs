@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using System.Windows;
 using AutoFocus_CodeFirst.Context;
 using AutoFocus_CodeFirst.Email;
 using AutoFocus_CodeFirst.Models;
@@ -170,9 +171,7 @@ namespace AutoFocus_CodeFirst.Controllers
                 emailAddress.Add(new EmailAddress(s, ""));
                 es.SendBulkEmail(s);
             }
-            
-            
-            //db.Suggestions.Add(suggestion);
+
 
             return RedirectToAction("Index");
         }

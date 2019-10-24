@@ -37,6 +37,7 @@ namespace AutoFocus_CodeFirst.Controllers
             return View(rent);
         }
 
+
         // GET: Rents/Create
         public ActionResult Create()
         {
@@ -148,5 +149,41 @@ namespace AutoFocus_CodeFirst.Controllers
             }
             base.Dispose(disposing);
         }
+
+        [HttpGet]
+        public ActionResult Rating(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Rent rent = db.Rents.Find(id);
+            if (rent == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.CarId = new SelectList(db.Cars, "CarId", "CarName", rent.CarId);
+            ViewBag.CustomerIdFK = new SelectList(db.Customers, "CustomerId", "Name", rent.CustomerIdFK);
+            return View(rent);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Rating([Bind(Include = "RentId,CustomerIdFK,CarId,Rating,RatingDesc,DateOfBooking,EndOfBooking,TotalRate")] Rent rent)
+        {
+            Rent r = db.Rents.Find(rent.RentId);
+
+            r.Rating = rent.Rating;
+            r.RatingDesc = rent.RatingDesc;
+            ModelState.Clear();
+            TryValidateModel(r);
+            if (ModelState.IsValid)
+            {
+                db.Entry(r).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(rent);
+        } 
     }
 }

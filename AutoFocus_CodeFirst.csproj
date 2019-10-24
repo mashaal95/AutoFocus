@@ -64,6 +64,7 @@
       <HintPath>packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="SendGrid, Version=9.12.0.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
       <HintPath>packages\Sendgrid.9.12.0\lib\net452\SendGrid.dll</HintPath>
     </Reference>
@@ -289,6 +290,10 @@
     <Compile Include="Migrations\201910211127474_r4.cs" />
     <Compile Include="Migrations\201910211127474_r4.Designer.cs">
       <DependentUpon>201910211127474_r4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910240732310_Removing mandatory not null field.cs" />
+    <Compile Include="Migrations\201910240732310_Removing mandatory not null field.Designer.cs">
+      <DependentUpon>201910240732310_Removing mandatory not null field.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -1198,6 +1203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910211127474_r4.resx">
       <DependentUpon>201910211127474_r4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910240732310_Removing mandatory not null field.resx">
+      <DependentUpon>201910240732310_Removing mandatory not null field.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -11,7 +11,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Rent</h4>
         <hr />
@@ -86,6 +86,26 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+@*@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+
+
+    }*@
+
+<script type="text/javascript">
+    $(function () {
+        $('#DateOfBooking').datepicker({
+            format: "dd/mm/yyyy"
+        }).on('dp.change', function (e) {
+            $(this).data('DatePicker').hide();
+        });
+    })</script>
+
+<script type="text/javascript">
+    $(function () {
+        $('#EndOfBooking').datepicker({
+            format: "dd/mm/yyyy"
+        }).on('dp.change', function (e) {
+            $(this).data('DatePicker').hide();
+        });
+    })</script>

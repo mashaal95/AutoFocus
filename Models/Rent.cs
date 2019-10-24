@@ -17,7 +17,7 @@ namespace AutoFocus_CodeFirst.Models
 
         public Int32 CarId { get; set; }    
 
-        [Required]
+       
         [Range(0, 5, ErrorMessage = "The rating can only be from 1-5 ")]
         public Int32 Rating { get; set; }
 

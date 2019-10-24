@@ -8,8 +8,10 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create") <br />
+    
 </p>
+
 <div class="table-responsive">
 <table class="table">
     <thead>
@@ -68,7 +70,8 @@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.RentId }) |
                     @Html.ActionLink("Details", "Details", new { id = item.RentId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.RentId })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.RentId }) |
+                    @Html.ActionLink("Rate!", "Rating", new { id = item.RentId })
                 </td>
             </tr>
 
