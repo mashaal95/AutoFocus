@@ -1147,6 +1147,7 @@
     <Content Include="Scripts\plugins\foundation.accordion.js.map" />
     <Content Include="Scripts\plugins\foundation.abide.min.js.map" />
     <Content Include="Scripts\plugins\foundation.abide.js.map" />
+    <Content Include="Views\Rents\Rating.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201910101052505_InitialCreate.resx">

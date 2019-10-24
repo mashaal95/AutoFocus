@@ -41,6 +41,7 @@ namespace AutoFocus_CodeFirst.Controllers
         public ActionResult Create()
         {
             ViewBag.CarId = new SelectList(db.Cars, "CarId", "CarName");
+            ViewBag.CarPrice = "CarPrice";
             ViewBag.CustomerIdFK = new SelectList(db.Customers, "CustomerId", "Name");
             return View();
         }
@@ -55,10 +56,19 @@ namespace AutoFocus_CodeFirst.Controllers
             DateTime StartDate = rent.DateOfBooking;
             DateTime EndDate = rent.EndOfBooking;
             int Diff = ((TimeSpan)(EndDate - StartDate)).Days;
-            //Double Total = Diff*
+            int Total = Diff;
+            int Price = 1;
+
+            Car c = db.Cars.Find(rent.CarId);
+
+            Price = c.PricePerDay * Diff;
+            rent.TotalRate = Price;
+
+            ModelState.Clear();
+            TryValidateModel(rent);
 
             if (ModelState.IsValid)
-            {
+            { 
                 db.Rents.Add(rent);
                 db.SaveChanges();
                 return RedirectToAction("Index");

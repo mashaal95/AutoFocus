@@ -6,10 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using AutoFocus_CodeFirst.Context;
+using AutoFocus_CodeFirst.Email;
 using AutoFocus_CodeFirst.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.Security.Application;
+using SendGrid.Helpers.Mail;
 
 namespace AutoFocus_CodeFirst.Controllers
 {
@@ -17,10 +20,13 @@ namespace AutoFocus_CodeFirst.Controllers
     {
         private AutoFocusContext db = new AutoFocusContext();
 
+        String x = "";
+
         // GET: Customers
         public ActionResult Index()
         {
             var UserId = User.Identity.GetUserId();
+            
 
             if (User.Identity.GetUserName() == "administrator@live.com")
             {
@@ -150,5 +156,26 @@ namespace AutoFocus_CodeFirst.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult Promo()
+        {
+            ApplicationDbContext db1 = new ApplicationDbContext();
+            List<EmailAddress> emailAddress = new List<EmailAddress>();
+            EmailFunctionality es = new EmailFunctionality();
+
+            List<string> emails = db1.Users.Select(c => c.Email).ToList();
+
+            foreach (String s in emails)
+            {
+                emailAddress.Add(new EmailAddress(s, ""));
+                es.SendBulkEmail(s);
+            }
+            
+            
+            //db.Suggestions.Add(suggestion);
+
+            return RedirectToAction("Index");
+        }
+
     }
 }

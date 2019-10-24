@@ -10,8 +10,10 @@
 <p>
     @if (User.IsInRole("Admin"))
     {
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Create New", "Create") <br />
+        @*@Html.ActionLink("Send a Promo Email", "Promo", "Customers")*@
     }
+    @Html.ActionLink("Send a Promo Email", "Promo", "Customers")
 </p>
 <div class="table-responsive">
 <table class="table">

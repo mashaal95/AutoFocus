@@ -54,7 +54,7 @@ namespace AutoFocus_CodeFirst.Controllers
         {
             
             if (ModelState.IsValid)
-            {
+            {    
                 db.Cars.Add(car);
                 db.SaveChanges();
                 return RedirectToAction("Index");
