@@ -87,6 +87,7 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
       <Private>True</Private>
@@ -294,6 +295,10 @@
     <Compile Include="Migrations\201910240732310_Removing mandatory not null field.cs" />
     <Compile Include="Migrations\201910240732310_Removing mandatory not null field.Designer.cs">
       <DependentUpon>201910240732310_Removing mandatory not null field.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910271057065_Adding dynamic charts.cs" />
+    <Compile Include="Migrations\201910271057065_Adding dynamic charts.Designer.cs">
+      <DependentUpon>201910271057065_Adding dynamic charts.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -647,9 +652,12 @@
     <Content Include="Content\foundation-float.min.css.map" />
     <Content Include="Content\foundation-float.css.map" />
     <Content Include="Attachments\AutoFocus_Attachment.pdf" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Properties\PublishProfiles\AutoRentaCar - Web Deploy.pubxml" />
     <Content Include="Scripts\breakpoints.min.js" />
     <Content Include="Scripts\browser.min.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
     <Content Include="Scripts\foundation.cjs.js" />
     <Content Include="Scripts\foundation.es6.js" />
     <Content Include="Scripts\foundation.esm.js" />
@@ -1154,6 +1162,7 @@
     <Content Include="Scripts\plugins\foundation.abide.min.js.map" />
     <Content Include="Scripts\plugins\foundation.abide.js.map" />
     <Content Include="Views\Rents\Rating.cshtml" />
+    <Content Include="Views\Rents\Charts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201910101052505_InitialCreate.resx">
@@ -1206,6 +1215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910240732310_Removing mandatory not null field.resx">
       <DependentUpon>201910240732310_Removing mandatory not null field.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910271057065_Adding dynamic charts.resx">
+      <DependentUpon>201910271057065_Adding dynamic charts.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

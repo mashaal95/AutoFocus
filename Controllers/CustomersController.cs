@@ -21,7 +21,7 @@ namespace AutoFocus_CodeFirst.Controllers
     {
         private AutoFocusContext db = new AutoFocusContext();
 
-        String x = "";
+       
 
         // GET: Customers
         public ActionResult Index()

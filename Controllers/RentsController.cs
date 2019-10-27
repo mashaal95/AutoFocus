@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using AutoFocus_CodeFirst.Context;
 using AutoFocus_CodeFirst.Models;
+using Newtonsoft.Json;
+using static AutoFocus_CodeFirst.Models.Rent;
 
 namespace AutoFocus_CodeFirst.Controllers
 {
@@ -54,21 +56,36 @@ namespace AutoFocus_CodeFirst.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "RentId,CustomerIdFK,CarId,Rating,RatingDesc,DateOfBooking,EndOfBooking,TotalRate")] Rent rent)
         {
+
+            ViewBag.bookingMessage = "";
             DateTime StartDate = rent.DateOfBooking;
             DateTime EndDate = rent.EndOfBooking;
             int Diff = ((TimeSpan)(EndDate - StartDate)).Days;
-            int Total = Diff;
-            int Price = 1;
-
+            
             Car c = db.Cars.Find(rent.CarId);
 
-            Price = c.PricePerDay * Diff;
+            var r1 = db.Rents.Where(x => x.CarId == rent.CarId);
+
+            foreach (Rent r in r1)
+            {
+                if (r.DateOfBooking == rent.DateOfBooking && r.EndOfBooking == rent.EndOfBooking)
+                {
+                    ViewBag.bookingMessage = "This booking cannot be made as another customer currently occupies this car ";
+                }
+                
+                //if (r.DateOfBooking <= rent.DateOfBooking && r.EndOfBooking <= rent.EndOfBooking)
+                //{
+                //    ViewBag.bookingMessage = "This booking cannot be made as another customer currently occupies this car ";
+                //}
+            }
+
+            int Price = c.PricePerDay * Diff;
             rent.TotalRate = Price;
 
             ModelState.Clear();
             TryValidateModel(rent);
 
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && ViewBag.bookingMessage == "")
             { 
                 db.Rents.Add(rent);
                 db.SaveChanges();
@@ -172,7 +189,6 @@ namespace AutoFocus_CodeFirst.Controllers
         public ActionResult Rating([Bind(Include = "RentId,CustomerIdFK,CarId,Rating,RatingDesc,DateOfBooking,EndOfBooking,TotalRate")] Rent rent)
         {
             Rent r = db.Rents.Find(rent.RentId);
-
             r.Rating = rent.Rating;
             r.RatingDesc = rent.RatingDesc;
             ModelState.Clear();
@@ -184,6 +200,34 @@ namespace AutoFocus_CodeFirst.Controllers
                 return RedirectToAction("Index");
             }
             return View(rent);
-        } 
+        }
+
+
+
+
+        public ActionResult Charts()
+        {
+            Rent rent = new Rent();
+            Car c = db.Cars.Find(rent.CarId);
+
+            Dictionary<String, int> keyValuePairs = db.Rents.GroupBy(x => x.Cars.CarName).ToDictionary(x => x.Key,x => x.Count());
+     
+            List<DataPoint> dataPoints = new List<DataPoint>();
+            
+            foreach (var r in keyValuePairs)
+            { 
+                
+                dataPoints.Add(new DataPoint(r.Key,r.Value ));
+            }
+
+            ViewBag.DataPoints = JsonConvert.SerializeObject(dataPoints);
+
+
+
+
+            return View(rent);
+
+        }
+
     }
 }

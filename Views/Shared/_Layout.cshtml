@@ -47,13 +47,15 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                    <li>@Html.ActionLink("Customers", "Index", "Customers")</li>
-                    <li>@Html.ActionLink("Rents", "Index", "Rents")</li>
-                    <li>@Html.ActionLink("Branches", "Index", "Branches")</li>
-                    <li>@Html.ActionLink("Cars", "Index", "Cars")</li>
-                    <li>@Html.ActionLink("Innovation", "Create", "Suggestions")</li>
+                        <li>@Html.ActionLink("Customers", "Index", "Customers")</li>
+                        <li>@Html.ActionLink("Rents", "Index", "Rents")</li>
+                        <li>@Html.ActionLink("Branches", "Index", "Branches")</li>
+                        <li>@Html.ActionLink("Cars", "Index", "Cars")</li>
+                        <li>@Html.ActionLink("Innovation", "Create", "Suggestions")</li>
+                        <li>@Html.ActionLink("Charts","Charts","Rents")</li>
                     }
-                </ul>
+                    
+                    </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
