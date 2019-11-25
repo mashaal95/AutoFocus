@@ -13,7 +13,7 @@ namespace AutoFocus_CodeFirst.Email
     {
 
 
-    private const String API_KEY = "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";
+    private const String API_KEY = "";
         List<String> Emails = new List<string>();
 
         
